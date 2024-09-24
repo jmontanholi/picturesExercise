@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Pictures exercise</title>
+  </head>
+  <body>
+    <main class="gallery">
+      <h1 class="heading-1 gallery__title">Pictures exercise</h1>
+      <div class="gallery__box">
+        <h2 class="gallery__img-title">Screenshot</h2>
+        <picture class="gallery__image">
+          <!-- 800w not working, after trying to debug using gemini 1.5 assistance I could not determine the issue -->
+          <!-- <source
+            srcset="
+              img/screenshot-800.webp 800w,
+              img/screenshot-1440.webp 1440w,
+              img/screenshot.webp
+            "
+            type="image/webp"
+          /> -->
+          <source
+            srcset="img/screenshot-800.webp"
+            media="(max-width: 800px)"
+            type="image/webp"
+          />
+          <source
+            srcset="img/screenshot-1440.webp 1440w, img/screenshot.webp"
+            type="image/webp"
+          />
+          <source
+            srcset="img/screenshot-800.png"
+            media="(max-width: 800px)"
+            type="image/png"
+          />
+          <source
+            srcset="img/screenshot-1440.png 1440w, img/screenshot.png"
+            type="image/png"
+          />
+          <img
+            srcset="img/screenshot-1440.jpeg 1440w, img/screenshot.jpeg"
+            src="img/screenshot.jpeg"
+            alt="Google page with several pictures of fields"
+          />
+        </picture>
+        <p class="gallery__text">
+          This is a screenshot, so it is recommended to use webp when supported
+          as it has a nice compression without necessarily losing quality
+        </p>
+      </div>
+      <div class="gallery__box">
+        <h2 class="gallery__img-title">Icon</h2>
+        <picture class="gallery__image">
+          <source srcset="img/alien.svg" type="image/svg+xml" />
+          <source srcset="img/alien.webp" type="image/webp" />
+          <img src="img/alien.png" alt="Alien head" />
+        </picture>
+        <p class="gallery__text">
+          This is an icon, so it is suggested to use SVG as it uses math to keep
+          the image quality making it a great option for responsive designs. It
+          should fallback to webp lossless when possible, if not, png
+        </p>
+      </div>
+      <div class="gallery__box">
+        <h2 class="gallery__img-title">Photography</h2>
+        <picture class="gallery__image">
+          <source
+            srcset="img/photography-800.webp"
+            media="(max-width: 800px)"
+            type="image/webp"
+          />
+          <source
+            srcset="img/photography-1440.webp 1440w, img/photography.webp"
+            type="image/webp"
+          />
+          <source
+            srcset="img/photography-800.jpg"
+            media="(max-width: 800px)"
+            type="image/jpg"
+          />
+          <img
+            srcset="img/photography-1440.jpg 1440w, img/photography.jpg"
+            src="img/photography-800.jpg"
+            alt="Orange flower photography from a very close range"
+          />
+        </picture>
+        <p class="gallery__text">
+          This is a photography, it is said that there is not much of a problem
+          to use lossy formats, using webp when possible as it has a better
+          compressing algorithm, if not, jpeg
+        </p>
+        <a
+          href="https://unsplash.com/photos/a-bunch-of-flowers-that-are-in-the-air-qahFV0LiMfQ?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash
+"
+          class="credit"
+        >
+          photo credits
+        </a>
+      </div>
+      <div class="gallery__box">
+        <h2 class="gallery__img-title">Animation</h2>
+        <video autoplay loop muted playsinline>
+          <source src="img/cat.webm" type="video/webm" />
+          <source src="img/cat.mp4" type="video/mp4" />
+        </video>
+        <p class="gallery__text">
+          This is an animation, and it is suggested to use, instead of gifs,
+          webm or mp4. Webm is a newer technology which has, in
+          theory<sup>*</sup>, smaller sizes than mp4, but mp4 is more supported
+          by browsers.
+        </p>
+        <p class="subtext">
+          <sup>*</sup>In theory since my webm and mp4 files seem to get away
+          from the rule, with the webm file being slightly larger
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
