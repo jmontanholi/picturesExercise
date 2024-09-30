@@ -12,35 +12,45 @@
       <div class="gallery__box">
         <h2 class="gallery__img-title">Screenshot</h2>
         <picture class="gallery__image">
-          <!-- 800w not working, after trying to debug using gemini 1.5 assistance I could not determine the issue -->
-          <!-- <source
-            srcset="
-              img/screenshot-800.webp 800w,
-              img/screenshot-1440.webp 1440w,
-              img/screenshot.webp
-            "
-            type="image/webp"
-          /> -->
           <source
             srcset="img/screenshot-800.webp"
             media="(max-width: 800px)"
             type="image/webp"
           />
           <source
-            srcset="img/screenshot-1440.webp 1440w, img/screenshot.webp"
+            media="(min-width: 801px) and (max-width: 1440px)"
+            srcset="img/screenshot-1440.webp"
             type="image/webp"
           />
+          <source
+            srcset="img/screenshot.webp"
+            media="(min-width: 1441px)"
+            type="image/webp"
+          />
+
           <source
             srcset="img/screenshot-800.png"
             media="(max-width: 800px)"
             type="image/png"
           />
           <source
-            srcset="img/screenshot-1440.png 1440w, img/screenshot.png"
+            media="(min-width: 801px) and (max-width: 1440px)"
+            srcset="img/screenshot-1440.png"
             type="image/png"
           />
+          <source
+            srcset="img/screenshot.png"
+            media="(min-width: 1441px)"
+            type="image/png"
+          />
+
+          <source
+            media="(max-width: 1440px)"
+            srcset="img/screenshot-1440.jpeg"
+            type="image/jpeg"
+          />
           <img
-            srcset="img/screenshot-1440.jpeg 1440w, img/screenshot.jpeg"
+            srcset="img/screenshot.jpeg"
             src="img/screenshot.jpeg"
             alt="Google page with several pictures of fields"
           />
@@ -72,16 +82,28 @@
             type="image/webp"
           />
           <source
-            srcset="img/photography-1440.webp 1440w, img/photography.webp"
+            srcset="img/photography-1440.webp"
+            media="(min-width: 801px) and (max-width: 1440px)"
             type="image/webp"
           />
+          <source
+            srcset="img/photography.webp"
+            media="(min-width: 1441px)"
+            type="image/webp"
+          />
+
           <source
             srcset="img/photography-800.jpg"
             media="(max-width: 800px)"
             type="image/jpg"
           />
+          <source
+            srcset="img/photography-1440.jpg"
+            media="(min-width: 801px) and (max-width: 1440px)"
+            type="image/jpg"
+          />
           <img
-            srcset="img/photography-1440.jpg 1440w, img/photography.jpg"
+            srcset="img/photography.jpg"
             src="img/photography-800.jpg"
             alt="Orange flower photography from a very close range"
           />
